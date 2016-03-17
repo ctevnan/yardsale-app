@@ -38,3 +38,27 @@ user1.save(function (err) {
     if (err) return (err);
   });
 }); 
+
+  /*item creation */
+  var item1 = new Item ({
+    itemName: "Itchy Chair",
+    _owner: user1.id,
+    itemDescription: "Really great office chair created from an odd, but highly durable material!",
+    itemPrice: 1000,
+    itemSold: false
+  });
+  
+  item1.save(function (err) {
+    if (err) return (err);
+  })  
+  /*within item creation add the comments in */
+  Item.update({
+    itemName: "Itchy Chair"
+  }, {
+
+  /* a bit lost here..*/
+
+  /*test data seed 2*/
+
+  /*create another user*/
+    
