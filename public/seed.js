@@ -71,6 +71,7 @@ user1.save(function (err) {
   /*within saving the user*/
   user2.save(function (err) {
     if (err) return (err);
+    console.log('done');
   },
 
   /*create comments within user save*/
@@ -85,4 +86,17 @@ user1.save(function (err) {
     });
   });
 
-    
+  /*test data seed 3*/
+  /*create user3 */
+  var user3 = new User ({
+    name: 'Dr. Who',
+    money: 900000,
+    password: 'the doctor',
+    collectedItems: ['Sonic Screwdriver', 'Tardis', 'Jammie Dodgers']  
+  })
+
+  /*within saving user3*/
+  user3.save(function (err) {
+    if (err) return (err);
+    console.log('done');
+  });
