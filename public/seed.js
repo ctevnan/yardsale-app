@@ -61,4 +61,28 @@ user1.save(function (err) {
   /*test data seed 2*/
 
   /*create another user*/
+  var user2 = new User ({
+    name: 'Agatha Heterodyne',
+    money: 700000000,
+    password: 'sparks',
+    collectedItems: ['Dingbot Prime', 'Locket', 'Lightly Used Death Ray']
+  });
+
+  /*within saving the user*/
+  user2.save(function (err) {
+    if (err) return (err);
+  },
+
+  /*create comments within user save*/
+  var comment3 = new Comment ({
+    commentMsg: "Do you have any clanks?",
+    _owner: user2.id,
+    itemLink: "Itchy Chair"
+
+    comment3.save(function (err) {
+      if (err) return (err);
+      console.log('done');
+    });
+  });
+
     
