@@ -13,6 +13,6 @@ app.get('/', function (req, res) {
   res.send(index.html);
 })
 
-app.listen(PORT, function() {
+app.listen(3000, function() {
   console.log('Listening on port: ' + PORT);
 })
