@@ -17,6 +17,8 @@ var user1 = new User({
   collectedItems: ['Meat Blob', 'Cryogenic Chamber', 'Octochicken']
 });
 
+
+
 /*within saving the user*/
 user1.save(function (err) {
   if (err) return (err);
