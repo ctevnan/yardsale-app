@@ -17,6 +17,9 @@
   },
   "homepage": "https://github.com/ctevnan/yardsale-app#readme",
   "dependencies": {
-    "body-parser": "^1.15.0"
+    "body-parser": "^1.15.0",
+    "http": "0.0.0",
+    "mongojs": "^2.3.0",
+    "sequelize": "^3.19.3"
   }
 }
