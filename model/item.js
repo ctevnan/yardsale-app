@@ -1,3 +1,4 @@
+var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 /* Item is an obj in a collection*/
