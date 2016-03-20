@@ -40,6 +40,19 @@ app.get('/items', function (req, res) {
   });
 }};
 
+app.post('/newitem', function (req, res) {
+  var newItem = new Item (req.body);
+  newItem.save(function (err, doc) {
+    if (err) {
+      console.log(err);
+      res.send(err);
+    } else {
+      console.log(doc);
+      res.send(doc);
+    }
+  });
+});
+
 app.post('/register', function (req, res) {
   var firstname = req.body.firstname;
   var lastname = req.body.lastname;
