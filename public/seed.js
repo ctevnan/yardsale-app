@@ -124,7 +124,30 @@ user1.save(function (err) {
   });
   
   /* item creation */
-  
+  var item4 = new Item ({
+    itemName: "airship",
+    _owner: user2.id,
+    itemDescription: "Who wouldn't want a flying city with their own personal laboratory?",
+    itemPrice: 500000,
+    itemSold: false
+  });
+
+  var item5 = new Item ({
+    itemName: "mimmoth"
+    _owner: user2.id,
+    itemDescription: "A mouse-sized wooly mammoth."
+    itemPrice: 50,
+    itemSold: false
+  });
+
+  var item6 = new Item ({
+    itemName: "Victorian Gypsy Coach"
+    _owner: user2.id,
+    itemDescription: "The only way to travel if you're into the Victorian era."
+    itemPrice: 1000,
+    itemSold: false
+  });
+
   /*test data seed 3*/
   /*create user3 */
   var user3 = new User ({
