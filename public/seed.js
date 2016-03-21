@@ -17,15 +17,14 @@ var user1 = new User({
   collectedItems: ['Meat Blob', 'Cryogenic Chamber', 'Octochicken']
 });
 
-
-
 /*within saving the user*/
 user1.save(function (err) {
   if (err) return (err);
+  console.log('done');
 
   /*create comments within the user save*/
   var comment1 = new comment ({
-    commentMsg: "What a great deal for our labrats..I mean lab employees.",
+    commentMsg: "What a great deal for our labrats.",
     _owner: user1.id,
     itemLink: "Itchy Chair"
   }),
@@ -49,10 +48,36 @@ user1.save(function (err) {
     itemPrice: 1000,
     itemSold: false
   });
-  
-  item1.save(function (err) {
-    if (err) return (err);
-  })  
+
+  var item2 = new Item ({
+    itemName: "bio computer"
+    _owner: user1.id,
+    itemDescription: "Half organic living matter and half computer."
+    itemPrice: 200000,
+    itemSold: false
+  });
+
+  var item3 = new Item ({
+    itemName: "fire flowers"
+    _owner: user1.id,
+    itemDescription: "Our scientists at Veridion Dynamics splied plant DNA with fireflies to make these fire flowers just for you."
+    itemPrice: 40000,
+    itemSold: false
+  });
+
+    item1.save(function (err) {
+      if (err) return (err);
+      console.log('done');
+    })
+    item2.save(function (err) {
+      if (err) return (err);
+      console.log('done');
+    })
+    item3.save(function (err) {
+      if (err) return (err);
+      console.log('done');
+    })
+
   /*within item creation add the comments in */
   Item.update({
     itemName: "Itchy Chair"
@@ -82,6 +107,11 @@ user1.save(function (err) {
     _owner: user2.id,
     itemLink: "Itchy Chair"
 
+  var comment4 = new Comment ({
+    commentMsg: "",
+    _owner: user2.id,
+    itemLink: ""
+  })
     comment3.save(function (err) {
       if (err) return (err);
       console.log('done');
