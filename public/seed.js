@@ -38,14 +38,21 @@ user1.save(function (err) {
     _owner: user3.id,
     itemLink: "Weeping Angel"
   })
+  var comment4 = new comment ({
+    commentMsg: "We will take the Airship, but we will not disclose how we intend to use it."
+    _owner: user1.id,
+    itemLink: "Airship"
+  })
 
   comment1.save(function (err) {
     if (err) return (err);
   comment2.save(function (err) {
     if (err) return (err);
   comment3.save(function (err) {
-    if (err) return (err);  
-  })
+    if (err) return (err); 
+  comment4.save(function (err) {
+    if (err) return (err);
+  })   
 }); 
 
   /*item creation */
@@ -121,22 +128,22 @@ user1.save(function (err) {
   },
 
   /*create comments within user save*/
-  var comment3 = new Comment ({
+  var comment4 = new Comment ({
     commentMsg: "Do you have any clanks?",
     _owner: user2.id,
     itemLink: "Itchy Chair"
 
-  var comment4 = new Comment ({
+  var comment6 = new Comment ({
     commentMsg: "I do find bowties to be cool.",
     _owner: user2.id,
     itemLink: "Bowtie"
   })
 
-    comment3.save(function (err) {
+    comment5.save(function (err) {
       if (err) return (err);
       console.log('done');
     })
-    comment4.save(function (err) {
+    comment6.save(function (err) {
       if (err) return (err);
       console.log('done');
     })
@@ -184,8 +191,8 @@ user1.save(function (err) {
   /*within item creation add the comments in */
   Item.update({
     itemName: "Airship",
-    commentMsg: "",
-    _owner: user.id
+    commentMsg: "We will take the Airship, but we will not disclose how we intend to use it.",
+    _owner: user1.id
   }), {
    Item.update({
     itemName: "Mimmoth",
@@ -214,31 +221,31 @@ user1.save(function (err) {
   });
 
     /*create comments within user save */
-    var comment4 = new Comment ({
+    var comment7 = new Comment ({
       commentMsg: "This Gypsy Coach is great.",
       _owner: user3.id,
       itemLink: "Victorian Gypsy Coach"
     )}
-    var comment5 = new Comment ({
+    var comment8 = new Comment ({
       commentMsg: "Fire flowers are cool.",
       _owner: user3.id,
       itemLink: "Fire Flowers"
     )}
-    var comment6 = new Comment ({
+    var comment9 = new Comment ({
       commentMsg: "I dont know how I feel about this Bio Computer business.",
       _owner: user3.id,
       itemLink: "Bio Computer"
     })
 
-    comment4.save(function (err) {
+    comment7.save(function (err) {
       if (err) return (err);
       console.log('done');
     })
-    comment5.save(function (err) {
+    comment8.save(function (err) {
       if (err) return (err);
       console.log('done');
     })
-    comment6.save(function (err) {
+    comment9.save(function (err) {
       if (err) return (err);
       console.log('done');
     })  
@@ -291,8 +298,8 @@ user1.save(function (err) {
   }), {
    Item.update({
     itemName: "Weeping Angel",
-    commentMsg: ""
-    _owner: user.id
+    commentMsg: "This is creepy, and we don't fully understand how it works. We'll take 5!"
+    _owner: user1.id
   }), {
    Item.update({
     itemName: "Dalek",
