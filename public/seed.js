@@ -33,11 +33,19 @@ user1.save(function (err) {
     _owner: user1.id,
     itemLink: "Dalek"
   })
+  var comment3 = new comment ({
+    commentMsg: "This is creepy, and we don't fully understand how it works. We'll take 5!",
+    _owner: user3.id,
+    itemLink: "Weeping Angel"
+  })
+
   comment1.save(function (err) {
     if (err) return (err);
   comment2.save(function (err) {
     if (err) return (err);
-  });
+  comment3.save(function (err) {
+    if (err) return (err);  
+  })
 }); 
 
   /*item creation */
@@ -95,7 +103,6 @@ user1.save(function (err) {
     _owner: user3.id
   }); 
 
-  /* a bit lost here ^ ^ ^ */
 
   /*test data seed 2*/
 
@@ -173,6 +180,23 @@ user1.save(function (err) {
       console.log('done');
     })
   });  
+  
+  /*within item creation add the comments in */
+  Item.update({
+    itemName: "Airship",
+    commentMsg: "",
+    _owner: user.id
+  }), {
+   Item.update({
+    itemName: "Mimmoth",
+    commentMsg: "What a great deal for out labrats."
+    _owner: user1.id
+  }), {
+   Item.update({
+    itemName: "Victorian Gypsy Coach",
+    commentMsg: "This Gypsy Coach is great.",
+    _owner: user3.id
+  }); 
 
   /*test data seed 3*/
   /*create user3 */
@@ -257,5 +281,22 @@ user1.save(function (err) {
       if (err) return (err);
       console.log('done');
     })
-  });   
+  });
+
+  /*within item creation add the comments in */
+  Item.update({
+    itemName: "Bowtie",
+    commentMsg: "I do find bowties to be cool.",
+    _owner: user2.id
+  }), {
+   Item.update({
+    itemName: "Weeping Angel",
+    commentMsg: ""
+    _owner: user.id
+  }), {
+   Item.update({
+    itemName: "Dalek",
+    commentMsg: "You had us at angry robot from space. Is there a limit to how many Daleks we can buy?",
+    _owner: user1.id
+  });    
     
