@@ -112,12 +112,19 @@ user1.save(function (err) {
     _owner: user2.id,
     itemLink: ""
   })
+
     comment3.save(function (err) {
       if (err) return (err);
       console.log('done');
-    });
+    })
+    comment4.save(function (err) {
+      if (err) return (err);
+      console.log('done');
+    })
   });
-
+  
+  /* item creation */
+  
   /*test data seed 3*/
   /*create user3 */
   var user3 = new User ({
@@ -132,3 +139,26 @@ user1.save(function (err) {
     if (err) return (err);
     console.log('done');
   });
+
+    /*create comments within user save */
+    var comment4 = new Comment ({
+      commentMsg: "",
+      _owner: user3.id,
+      itemLink: ""
+    )}
+    var comment5 = new Comment ({
+      commentMsg: "",
+      _owner: user3.id,
+      itemLink: ""
+    )}
+
+    comment4.save(function (err) {
+      if (err) return (err);
+      console.log('done');
+    })
+    comment5.save(function (err) {
+      if (err) return (err);
+      console.log('done');
+    })  
+  )};  
+    
