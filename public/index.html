@@ -7,6 +7,22 @@
 </head>
 <body>
   <div id="wrapper">
-    <h1></h1>
+    <h1>Yardsale App</h1>
+    <div id="line"></div>
+    <div ng-controller="ItemListController as itemList">
+
+      <div class="eachitem" ng-repeat"item in itemList.items">
+        <div class="left">
+          <h2>{{item.user}}</h2>
+          <h3>{{item.comment}}</h3>
+        </div>
+        
+        <div class="right">
+          <ul>
+            <li ng-repeat="item in collection.items">{{item.name}}</li>
+          </ul>
+        </div>
+      </div>        
+
 </body>
 </html>

@@ -1,7 +1,7 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
-//var logger = require('morgan');
+var logger = require('morgan');
 var app = express();
 var PORT = process.env.NODE_ENV || 3000;
 
@@ -18,7 +18,7 @@ db.on('connection', function() {
 
 var Item = require('./Item');
 
-//app.use(logger('dev'));
+app.use(logger('dev'));
 app.use(express.static(__dirname + "/public"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
