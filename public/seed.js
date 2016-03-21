@@ -26,12 +26,12 @@ user1.save(function (err) {
   var comment1 = new comment ({
     commentMsg: "What a great deal for our labrats.",
     _owner: user1.id,
-    itemLink: "Itchy Chair"
+    itemLink: "Mimmoth"
   }),
   var comment2 = new comment ({
-    commentMsg: "Veridian Dynamics. Every day, something we make makes your life better. Power. We make that. Technology. We make that. Cows. Well, no. We don’t make cows, although we have made a sheep. Veridian Dynamics. Every day, something we make makes your life better. Usually.",
+    commentMsg: "You had us at angry robot from space. Is there a limit to how many Daleks we can buy?",
     _owner: user1.id,
-    itemLink: "Whirlpool Tub"
+    itemLink: "Dalek"
   })
   comment1.save(function (err) {
     if (err) return (err);
@@ -50,7 +50,7 @@ user1.save(function (err) {
   });
 
   var item2 = new Item ({
-    itemName: "bio computer"
+    itemName: "Bio Computer"
     _owner: user1.id,
     itemDescription: "Half organic living matter and half computer."
     itemPrice: 200000,
@@ -58,7 +58,7 @@ user1.save(function (err) {
   });
 
   var item3 = new Item ({
-    itemName: "fire flowers"
+    itemName: "Fire Flowers"
     _owner: user1.id,
     itemDescription: "Our scientists at Veridion Dynamics splied plant DNA with fireflies to make these fire flowers just for you."
     itemPrice: 40000,
@@ -80,10 +80,22 @@ user1.save(function (err) {
 
   /*within item creation add the comments in */
   Item.update({
-    itemName: "Itchy Chair"
-  }, {
+    itemName: "Itchy Chair",
+    commentMsg: "Do you have any clanks?",
+    _owner: user2.id
+  }), {
+   Item.update({
+    itemName: "Bio Computer",
+    commentMsg: "I don't know how I feel about this Bio Computer business."
+    _owner: user3.id
+  }), {
+   Item.update({
+    itemName: "Fire Flowers",
+    commentMsg: "Fire Flowers are cool.",
+    _owner: user3.id
+  }); 
 
-  /* a bit lost here..*/
+  /* a bit lost here ^ ^ ^ */
 
   /*test data seed 2*/
 
@@ -108,9 +120,9 @@ user1.save(function (err) {
     itemLink: "Itchy Chair"
 
   var comment4 = new Comment ({
-    commentMsg: "",
+    commentMsg: "I do find bowties to be cool.",
     _owner: user2.id,
-    itemLink: ""
+    itemLink: "Bowtie"
   })
 
     comment3.save(function (err) {
@@ -125,7 +137,7 @@ user1.save(function (err) {
   
   /* item creation */
   var item4 = new Item ({
-    itemName: "airship",
+    itemName: "Airship",
     _owner: user2.id,
     itemDescription: "Who wouldn't want a flying city with their own personal laboratory?",
     itemPrice: 500000,
@@ -133,7 +145,7 @@ user1.save(function (err) {
   });
 
   var item5 = new Item ({
-    itemName: "mimmoth"
+    itemName: "Mimmoth"
     _owner: user2.id,
     itemDescription: "A mouse-sized wooly mammoth."
     itemPrice: 50,
@@ -179,15 +191,20 @@ user1.save(function (err) {
 
     /*create comments within user save */
     var comment4 = new Comment ({
-      commentMsg: "",
+      commentMsg: "This Gypsy Coach is great.",
       _owner: user3.id,
-      itemLink: ""
+      itemLink: "Victorian Gypsy Coach"
     )}
     var comment5 = new Comment ({
-      commentMsg: "",
+      commentMsg: "Fire flowers are cool.",
       _owner: user3.id,
-      itemLink: ""
+      itemLink: "Fire Flowers"
     )}
+    var comment6 = new Comment ({
+      commentMsg: "I dont know how I feel about this Bio Computer business.",
+      _owner: user3.id,
+      itemLink: "Bio Computer"
+    })
 
     comment4.save(function (err) {
       if (err) return (err);
@@ -196,6 +213,49 @@ user1.save(function (err) {
     comment5.save(function (err) {
       if (err) return (err);
       console.log('done');
+    })
+    comment6.save(function (err) {
+      if (err) return (err);
+      console.log('done');
     })  
-  )};  
+  )}; 
+
+   /* item creation */
+  var item7 = new Item ({
+    itemName: "Bowtie",
+    _owner: user3.id,
+    itemDescription: "Bowties are cool.",
+    itemPrice: 45,
+    itemSold: false
+  });
+
+  var item8 = new Item ({
+    itemName: "Weeping Angel",
+    _owner: user3.id,
+    itemDescription: "Conventional gothic marble statue, nothing to worry about here..",
+    itemPrice: 9000,
+    itemSold: false
+  });
+
+  var item9 = new Item ({
+    itemName: "Dalek",
+    _owner: user3.id,
+    itemDescription: "Angry robot from space. Great at extermination.",
+    itemPrice: 15,
+    itemSold: false
+  });
+
+    item7.save(function (err) {
+      if (err) return (err);
+      console.log('done');
+    })
+    item8.save(function (err) {
+      if (err) return (err);
+      console.log('done');
+    })
+    item9.save(function (err) {
+      if (err) return (err);
+      console.log('done');
+    })
+  });   
     
