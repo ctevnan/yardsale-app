@@ -148,6 +148,20 @@ user1.save(function (err) {
     itemSold: false
   });
 
+    item4.save(function (err) {
+      if (err) return (err);
+      console.log('done');
+    })
+    item5.save(function (err) {
+      if (err) return (err);
+      console.log('done');
+    })
+    item6.save(function (err) {
+      if (err) return (err);
+      console.log('done');
+    })
+  });  
+
   /*test data seed 3*/
   /*create user3 */
   var user3 = new User ({
