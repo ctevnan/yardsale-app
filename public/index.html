@@ -5,19 +5,53 @@
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
   <script src="assets/javascript/controller/app.js"></script>
   <link rel="stylesheet" href="assets/css/style.css">
-  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
 </head>
-<body>
+<style>
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
 
-  <div class="jumbotron">
-    <div class="container">
-      <div class="col-sm=8 col-sm-offset-2">
-        <div ng-class="{ 'alert': flash, 'alert-success': flash.type === 'success', 'alert-danger': flash.type === 'error' }" ng-if="flash" ng-bind="flash.message"></div>
-        <div ng-view></div>
-      </div>
-    </div>
-  </div>
-        
+input[type=submit] {
+  width: 100%;
+  background-color: #4CaF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input [type=submit]:hover {
+  background-color: #f2f2f2;
+} 
+
+div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 40px;
+}
+  </style>
+  <body>
+
+    <h3>Please Register and Log In</h3>
+
+    <div>
+      <form action="register">
+        <label for="firstnm">First Name</label>
+        <input type="text" id="firstnm" name="firstname" placeholder="Please enter your first name">
+
+
+
+
+
+         
   <div id="wrapper">
     <h1>Yardsale App</h1>
     <div id="line"></div>
@@ -46,10 +80,6 @@
         <input id="submitbutton" type="submit" value="Add Item">
       </form>
     </div>
-  </div>
-  <script src="//code.jquery.com/jquery-2.0.3.min.js"></script>
-  <script src="//code.angularjs.org/1.2.20/angular.js"></script>
-  <script src="//code.angularjs.org/1.2.20/angular-route.js"></script>
-  <script src="//code.angularjs.org/1.2.13/angular-cookies.js"></script>             
+  </div>     
 </body>
 </html>
