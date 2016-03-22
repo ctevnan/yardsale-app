@@ -60,9 +60,9 @@
       </div>
 
       <form ng-submit="itemList.addItem()">
-        <input id="" type="" ng-model="" size="30" placeholder="">
-        <textarea type="text" ng-model="" size="30" placeholder=""></textarea>
-        <div ng-repeat="">
+        <input id="itemname" type="text" ng-model="itemList.item" size="30" placeholder="Item">
+        <textarea type="text" ng-model="commentList.comment" size="30" placeholder="Comment"></textarea>
+        <div ng-repeat="itemBox in itemList.itemBoxes">
           <input class="iteminput" type="text" ng-model="itemBox.name" size="30">
         </div>
         <p ng-click="itemList.addItemBox()">Add Items + </p>
