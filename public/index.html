@@ -2,8 +2,8 @@
 <html ng-app="yardsaleApp">
 <head>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
-  <script src="controller/app.js"></script>
-  <link rel="stylesheet" href="public/css/style.css">
+  <script src="assets/javascript/controller/app.js"></script>
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
   <div id="wrapper">
@@ -22,7 +22,18 @@
             <li ng-repeat="item in collected.items">{{item.name}}</li>
           </ul>
         </div>
-      </div>        
+      </div>
 
+      <form ng-submit="itemList.addItem()">
+        <input id="" type="" ng-model="" size="30" placeholder="">
+        <textarea type="text" ng-model="" size="30" placeholder=""></textarea>
+        <div ng-repeat="">
+          <input class="iteminput" type="text" ng-model="itemBox.name" size="30">
+        </div>
+        <p ng-click="itemList.addItemBox()">Add Items + </p>
+        <input id="submitbutton" type="submit" value="Add Item">
+      </form>
+    </div>
+  </div>             
 </body>
 </html>

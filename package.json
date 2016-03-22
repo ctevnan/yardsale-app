@@ -20,6 +20,7 @@
     "body-parser": "^1.15.0",
     "http": "0.0.0",
     "mongojs": "^2.3.0",
+    "morgan": "^1.7.0",
     "sequelize": "^3.19.3"
   }
 }
