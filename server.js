@@ -51,7 +51,9 @@ app.post('/newitem', function (req, res) {
 app.post('/register', function (req, res) {
   var firstname = req.body.firstname;
   var lastname = req.body.lastname;
+  var username = req.body.username;
   var email = req.body.email;
+  var password= req.body.password;
 })
 
 app.post('/login', function (req, res) {
