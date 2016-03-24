@@ -6,69 +6,32 @@
   <script src="assets/javascript/controller/app.js"></script>
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
-  <body>
-
-    <h3>Please Register and Log In</h3>
-
-    <div>
-      <form action="register">
-        <label for="firstnm">First Name</label>
-        <input type="text" id="firstnm" name="firstname" placeholder="Please enter your first name">
-        <label for="lastnm">Last Name</label>
-        <input type="text" id="lastnm" name="lastname" placeholder="Please enter your last name">
-        <label for="usernm">Username</label>
-        <input type="text" id="usernm" name="username" placeholder="Enter your desired username">
-        <label for="email">Email</label>
-        <input type="text" id="emails" name="emailaddress" placeholder="Email Address">
-        <label for="passwrd">Password</label>
-        <input type="number" id="passwrd" name="password" placeholder="Password">
-      </form>
-    </div>
-    <br>
-    <br>
-    <div>
-      <form action="login">
-        <label for="firstnm">First Name</label>
-        <input type="text" id="firstnm" name="firstname" placeholder="Please enter your first name">
-        <label for="lastnm">Last Name</label>
-        <input type="text" id="lastnm" name="lastname" placeholder="Please enter your last name">
-        <label for="usernm">Username</label>
-        <input type="text" id="usernm" name="username" placeholder="Enter your desired username">
-        <label for="email">Email</label>
-        <input type="text" id="emails" name="emailaddress" placeholder="Email Address">
-        <label for="passwrd">Password</label>
-        <input type="number" id="passwrd" name="password" placeholder="Password">
-      </form>
-    </div>
-
+<body>
   <div id="wrapper">
     <h1>Yardsale App</h1>
-    <div id="line"></div>
-    <div ng-controller="ItemListController as itemList">
-
-      <div class="eachitem" ng-repeat"item in itemList.items">
-        <div class="left">
-          <h2>{{item.user}}</h2>
-          <h3>{{item.comment}}</h3>
+      <div id="line"></div>
+        <div ng-controller="ItemListController as itemList">
+          <div class="eachitem" ng-repeat"item in itemList.items">
+            <div class="left">
+              <h2>{{item.user}}</h2>
+              <h3>{{item.comment}}</h3>
+            </div>
+            <div class="right">
+              <ul>
+                <li ng-repeat="item in collected.items">{{item.name}}</li>
+              </ul>
+            </div>
+          </div>
+          <form ng-submit="itemList.addItem()">
+            <input id="itemname" type="text" ng-model="itemList.item" size="30" placeholder="Item">
+            <textarea type="text" ng-model="commentList.comment" size="30" placeholder="Comment"></textarea>
+            <div ng-repeat="itemBox in itemList.itemBoxes">
+              <input class="iteminput" type="text" ng-model="itemBox.name" size="30">
+            </div>
+            <p ng-click="itemList.addItemBox()">Add Items + </p>
+            <input id="submitbutton" type="submit" value="Add Item">
+          </form>
         </div>
-        
-        <div class="right">
-          <ul>
-            <li ng-repeat="item in collected.items">{{item.name}}</li>
-          </ul>
-        </div>
-      </div>
-
-      <form ng-submit="itemList.addItem()">
-        <input id="itemname" type="text" ng-model="itemList.item" size="30" placeholder="Item">
-        <textarea type="text" ng-model="commentList.comment" size="30" placeholder="Comment"></textarea>
-        <div ng-repeat="itemBox in itemList.itemBoxes">
-          <input class="iteminput" type="text" ng-model="itemBox.name" size="30">
-        </div>
-        <p ng-click="itemList.addItemBox()">Add Items + </p>
-        <input id="submitbutton" type="submit" value="Add Item">
-      </form>
-    </div>
-  </div>     
-</body>
+      </div>     
+  </body>
 </html>
