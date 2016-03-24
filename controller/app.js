@@ -2,5 +2,10 @@ angular.module('yardsaleApp', [])
   .controller('ItemListController', function($http) {
     var ItemList = this;
     itemList.items= [];
-    itemList.item
+    itemList.itemBoxes= [];
+    itemList.itemBoxCounter = 1;
   })
+
+  itemList.addItem = function() {
+    console.log
+  }

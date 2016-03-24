@@ -9,9 +9,9 @@ var PORT = process.env.NODE_ENV || 3000;
 var db = 'mongodb://localhost/items';
 mongoose.connect(db);
 
-var Item = require('./model/item');
-var Comment = require('./model/comment');
-var User = require('./model/comment');
+var Item = require('./item');
+var Comment = require('./comment');
+var User = require('./user');
 
 app.use(logger('dev'));
 app.use(express.static(__dirname + "/public"));
@@ -24,7 +24,7 @@ app.get('/', function (req, res) {
  res.send(index.html);
 });
 
-app.get('/items', function (req, res) {
+app.get('/item', function (req, res) {
   Item.find(function (err, docs) {
     if (err) {
       console.log(err);
@@ -46,20 +46,6 @@ app.post('/newitem', function (req, res) {
       res.send(doc);
     }
   });
-});
-
-app.post('/register', function (req, res) {
-  var firstname = req.body.firstname;
-  var lastname = req.body.lastname;
-  var username = req.body.username;
-  var email = req.body.email;
-  var password= req.body.password;
-})
-
-app.post('/login', function (req, res) {
-  var username = req.body.username;
-  var email = req.body.email;
-  var password = req.body.password;
 });
 
 app.listen(3000, function() {
