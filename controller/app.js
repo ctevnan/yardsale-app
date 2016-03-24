@@ -32,5 +32,20 @@ angular.module('yardsaleApp', [])
   itemList.getItems = function() {
     $http({
       method: 'GET',
-    })
-  }
+      url: '/items'
+    }).then (function (result) {
+      angular.forEach(result.data, function (eachOne) {
+        itemList.item.push(eachOne);
+      });
+    });
+  };
+
+  itemList.addItemBox = function() {
+    itemList.itemBoxes.push({
+      name:"item" + itemList.itemBoxCounter
+    });
+    itemList.itemBoxCounter++;
+  };
+
+itemList.getItems();
+});  
