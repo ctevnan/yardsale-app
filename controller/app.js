@@ -3,7 +3,7 @@ angular.module('yardsaleApp', [])
     var ItemList = this;
     itemList.items= [];
     itemList.itemBoxes= [];
-    itemList.itemBoxCounter = 1;
+    itemList.itemBoxCounter = 0;
   })
 
   itemList.addItem = function() {
@@ -11,7 +11,6 @@ angular.module('yardsaleApp', [])
     var newItem = {
       itemName: itemList.name,
       itemDescription: itemList.description,
-      itemPrice: itemList.price,
       itemSold: itemList.sold,
       comments: itemList.comments,
     };
@@ -21,5 +20,17 @@ angular.module('yardsaleApp', [])
       data: newItem,  
     }).then(function (result) {
       itemList.items.push(result.data);
+      itemList.name = '';
+      itemList.description = '';
+      itemList.sold = boolean;
+      itemList.comments = '';
+      itemList.itemBoxes = [];
+      itemList.itemBoxCounter = 0;
+    });
+  };
+
+  itemList.getItems = function() {
+    $http({
+      method: 'GET',
     })
   }
