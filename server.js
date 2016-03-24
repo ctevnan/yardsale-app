@@ -9,22 +9,22 @@ var PORT = process.env.NODE_ENV || 3000;
 var db = 'mongodb://localhost/items';
 mongoose.connect(db);
 
-var Item = require('./item');
-var Comment = require('./comment');
-var User = require('./user');
+var Item = require('./model/item');
+var Comment = require('./model/comment');
+var User = require('./model/user');
 
 app.use(logger('dev'));
 app.use(express.static(__dirname + "/public"));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({
-  extended: false
-}));
+//app.use(bodyParser.urlencoded({
+//  extended: false
+//}));
 
 app.get('/', function (req, res) {
  res.send(index.html);
 });
 
-app.get('/item', function (req, res) {
+app.get('/items', function (req, res) {
   Item.find(function (err, docs) {
     if (err) {
       console.log(err);

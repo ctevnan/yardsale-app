@@ -12,8 +12,8 @@ var Comment = require('./model/comment');
 /*create a user*/
 var user1 = new User({
   name: 'Veridian Dynamics',
-  money: 100000000000,
-  password: 'soulless conglomerate',
+ // money: 100000000000,
+  //password: 'password',
   collectedItems: ['Meat Blob', 'Cryogenic Chamber', 'Octochicken']
 });
 

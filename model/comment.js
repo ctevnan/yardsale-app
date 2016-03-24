@@ -5,9 +5,8 @@ var Schema = mongoose.Schema;
 
 var commentSchema = new Schema ({
   _owner: { type: Schema.Types.ObjectId, ref:'User'}  
-
-  // in the item schema, comments type and ref are covered.
-})
+  
+});
 
 var Comment = mongoose.model('Comment', commentSchema);
 

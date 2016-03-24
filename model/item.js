@@ -7,11 +7,11 @@ var Schema = mongoose.Schema;
 
 var itemSchema = new Schema ({
   _owner: { type: Schema.Types.ObjectId, ref:'User'},
-
+  itemList: Array,
   itemName: String,
   itemDescription: String,
-  itemPrice: Number,
-  itemSold: Boolean,
+ // itemPrice: Number,
+ // itemSold: Boolean,
   comments: [{
     type: Schema.Types.ObjectId,
     ref: 'comment'
